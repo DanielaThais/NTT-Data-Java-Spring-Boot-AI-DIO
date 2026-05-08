@@ -2,7 +2,7 @@ import java.util.Objects;
 import static java.util.Objects.isNull;
 import static java.util.Objects.hash;
 
-public class User {
+public class User implements Comparable<User> {
     
     private int id;
     private String name;
@@ -47,5 +47,13 @@ public class User {
     @Override
     public int hashCode(){
         return hash(this.id, this.name);
+    }
+
+    @Override
+    public int compareTo(final User o){
+        var compareResult = 0;
+        if (this.id < o.id) compareResult --;
+        if (this.id > o.id) compareResult ++;
+        return compareResult;
     }
 }
