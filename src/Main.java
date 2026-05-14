@@ -1,25 +1,18 @@
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		// trabalhando com o BigDecimal, que é a forma mais correta de trabalhar com números decimais em Java, pois ele utiliza uma representação decimal exata, evitando os problemas de precisão que ocorrem com os tipos float e double.
-		BigDecimal value1 = new BigDecimal("0.1");
-		BigDecimal value2 = new BigDecimal("0.2");
+		BigDecimal value1 = new BigDecimal("99.81");
+		BigDecimal value2 = new BigDecimal("56.54");
 
-		System.out.println("Soma com BigDecimal: " + value1.add(value2));
-		System.out.println("\n<============= BIGDECIMAL =============>");
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.1")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.2")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.3")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.4")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.5")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.6")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.7")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.8")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("1.9")));
-		System.out.println(new BigDecimal("2.00").subtract(new BigDecimal("2.0")));
+		System.out.println("<=========== BIGDECIMAL ===========>");
+		System.out.println("Valor 1: " + value1 + "\nValor 2: " + value2);
+		System.out.println("\nMultiplicando os números: " + value1.multiply(value2));
+		System.out.println("Dividindo os números: " + value1.divide(value2, RoundingMode.CEILING));
 	}
 
 }
